@@ -1,6 +1,14 @@
 @echo off
 setlocal
 
+:: 관리자 권한으로 실행되었는지 확인
+net session >nul 2>&1
+if not %errorlevel% == 0 (
+    echo Requesting administrator privileges...
+    powershell -Command "Start-Process '%~f0' -Verb runAs"
+    exit /b
+)
+
 REM GitHub 리포지토리 ZIP 파일 URL 설정
 set "REPO_URL=https://github.com/youti1021/LAEC/archive/refs/heads/main.zip"
 set "OUTPUT_ZIP=LAEC-main.zip"
