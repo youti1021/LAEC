@@ -4,7 +4,7 @@ echo Installer v.1
 echo Made by. 승준
 
 echo Downloading Python installer...
-wget -O python-installer.exe https://www.python.org/ftp/python/3.12.5/python-3.12.5-amd64.exe
+powershell -Command "Invoke-WebRequest -Uri 'https://www.python.org/ftp/python/3.12.5/python-3.12.5-amd64.exe' -OutFile 'python-installer.exe'"
 
 echo Installing Python...
 python-installer.exe /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
@@ -33,8 +33,5 @@ python -m pip install pillow pyscreeze pyautogui numpy opencv-python
 
 echo Running index.py...
 python -m index.py
-
-echo Deleting the batch file...
-start /b "" cmd /c "%SELF_DELETE_CMD%"
 
 endlocal
