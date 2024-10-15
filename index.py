@@ -3,7 +3,7 @@ import numpy as np
 import pyautogui
 import time
 
-template_paths = ['./pic/play.png', './pic/next.png', './pic/skip.png', './pic/control_btn_play.png']
+template_paths = ['./pic/play.png', './pic/next.png', './pic/skip.png']
 
 try:
     while True:
@@ -44,7 +44,7 @@ try:
                 print(f"'{template_path}' 이미지를 찾을 수 없습니다.")
 
         # 잠시 대기 후 다시 시도 (예: 1초 대기)
-        time.sleep(1)
+        time.sleep(5)
 
 except KeyboardInterrupt:
     print("프로그램이 사용자의 요청으로 종료되었습니다.")
